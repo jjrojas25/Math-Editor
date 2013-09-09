@@ -12,6 +12,8 @@ namespace MathEditor
 {
     public partial class frmPrincipal : Form
     {
+        FrmTools Elementos = new FrmTools();
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace MathEditor
             string destFile = System.IO.Path.Combine(Application.StartupPath, destName);
             System.IO.File.Copy(sourceFile, destFile, true);
             webBrowser1.Navigate(destFile);
+            Elementos.Show();
         }
 
         private void mnuFullscreen_Click(object sender, EventArgs e)
@@ -551,11 +554,146 @@ namespace MathEditor
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
-            if (toolModif.Text == true)
+            if (toolModif.Text.Equals("true"))
             {
+                if (toolFile.Text != "")
+                {
+                    DialogResult dialog = MessageBox.Show("¿Desea guardar los cambios en \"" + toolFile + "\"?", "Guardar Documento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        string[] lineas = new string[1];
+                        lineas[0] = txtFormula.Text;
+                        System.IO.File.WriteAllLines(toolPath.Text, lineas);
+                        Application.Exit();
+                    }
+                    else if (dialog == DialogResult.No)
+                    {
+                        Application.Exit();
+                    }
+                }
+                else
+                {
+                    DialogResult dialog = MessageBox.Show("¿Desea guardar los cambios en \"Sin Título\"?", "Guardar Documento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Stream myStream;
+                        SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
+                        saveFileDialog1.Filter = "math formula files (*.fml)|*.fml";
+                        saveFileDialog1.FilterIndex = 1;
+                        saveFileDialog1.RestoreDirectory = true;
+
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            if ((myStream = saveFileDialog1.OpenFile()) != null)
+                            {
+                                myStream.Close();
+                                toolPath.Text = saveFileDialog1.FileName;
+                                string[] partes = toolPath.Text.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                                toolFile.Text = partes[partes.Length - 1];
+                                this.Text = toolFile.Text + " - Math Editor";
+                                string[] lineas = new string[1];
+                                lineas[0] = txtFormula.Text;
+                                System.IO.File.WriteAllLines(toolPath.Text, lineas);
+                            }
+                        }
+                        Application.Exit();
+                    }
+                    else if (dialog == DialogResult.No)
+                    {
+                        Application.Exit();
+                    }
+                }
             }
             Close();
+        }
+
+        private void mnuNuevo_Click(object sender, EventArgs e)
+        {
+            if (toolModif.Text.Equals("true"))
+            {
+                if (toolFile.Text != "")
+                {
+                    DialogResult dialog = MessageBox.Show("¿Desea guardar los cambios en \"" + toolFile + "\"?", "Guardar Documento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        string[] lineas = new string[1];
+                        lineas[0] = txtFormula.Text;
+                        System.IO.File.WriteAllLines(toolPath.Text, lineas);
+                        toolPath.Text = "";
+                        toolFile.Text = "";
+                        toolModif.Text = "false";
+                        txtFormula.Text = "";
+                        this.Text = "Sin Título - Math Editor";
+                    }
+                    else if (dialog == DialogResult.No)
+                    {
+                        toolPath.Text = "";
+                        toolFile.Text = "";
+                        toolModif.Text = "false";
+                        txtFormula.Text = "";
+                        this.Text = "Sin Título - Math Editor";
+                    }
+                }
+                else
+                {
+                    DialogResult dialog = MessageBox.Show("¿Desea guardar los cambios en \"Sin Título\"?", "Guardar Documento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Stream myStream;
+                        SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                        saveFileDialog1.Filter = "math formula files (*.fml)|*.fml";
+                        saveFileDialog1.FilterIndex = 1;
+                        saveFileDialog1.RestoreDirectory = true;
+
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            if ((myStream = saveFileDialog1.OpenFile()) != null)
+                            {
+                                myStream.Close();
+                                toolPath.Text = saveFileDialog1.FileName;
+                                string[] partes = toolPath.Text.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                                toolFile.Text = partes[partes.Length - 1];
+                                this.Text = toolFile.Text + " - Math Editor";
+                                string[] lineas = new string[1];
+                                lineas[0] = txtFormula.Text;
+                                System.IO.File.WriteAllLines(toolPath.Text, lineas);
+                            }
+                        }
+                        toolPath.Text = "";
+                        toolFile.Text = "";
+                        toolModif.Text = "false";
+                        txtFormula.Text = "";
+                        this.Text = "Sin Título - Math Editor";
+                    }
+                    else if (dialog == DialogResult.No)
+                    {
+                        toolPath.Text = "";
+                        toolFile.Text = "";
+                        toolModif.Text = "false";
+                        txtFormula.Text = "";
+                        this.Text = "Sin Título - Math Editor";
+                    }
+                }
+            }
+        }
+
+        private void elementosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (elementosToolStripMenuItem.Checked == false)
+            {
+                Elementos.Hide();
+            }
+            else
+            {
+                Elementos.Show();
+            }
+        }
+
+        private void Elementos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            elementosToolStripMenuItem.Checked = false;
         }
     }
 }

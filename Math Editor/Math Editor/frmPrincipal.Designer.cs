@@ -53,6 +53,9 @@
             this.toolPath = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolModif = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barraDeEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbrir = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGuardar = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +66,7 @@
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuActualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFullscreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.barraDeEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -235,6 +236,7 @@
             this.toolStripSeparator4,
             this.barrasDeHerramientasToolStripMenuItem,
             this.barraDeEstadoToolStripMenuItem,
+            this.elementosToolStripMenuItem,
             this.toolStripSeparator5,
             this.mnuFullscreen});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
@@ -305,6 +307,31 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ay&uda";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de &Math Editor";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
+            // barraDeEstadoToolStripMenuItem
+            // 
+            this.barraDeEstadoToolStripMenuItem.Checked = true;
+            this.barraDeEstadoToolStripMenuItem.CheckOnClick = true;
+            this.barraDeEstadoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
+            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.barraDeEstadoToolStripMenuItem.Text = "Barra &de estado";
+            this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
+            // 
             // mnuNuevo
             // 
             this.mnuNuevo.Image = global::MathEditor.Properties.Resources.Document_1;
@@ -312,6 +339,7 @@
             this.mnuNuevo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.mnuNuevo.Size = new System.Drawing.Size(247, 22);
             this.mnuNuevo.Text = "&Nuevo";
+            this.mnuNuevo.Click += new System.EventHandler(this.mnuNuevo_Click);
             // 
             // mnuAbrir
             // 
@@ -394,30 +422,15 @@
             this.mnuFullscreen.Text = "P&antalla Completa";
             this.mnuFullscreen.Click += new System.EventHandler(this.mnuFullscreen_Click);
             // 
-            // ayudaToolStripMenuItem
+            // elementosToolStripMenuItem
             // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acercaDeToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ay&uda";
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de &Math Editor";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
-            // 
-            // barraDeEstadoToolStripMenuItem
-            // 
-            this.barraDeEstadoToolStripMenuItem.Checked = true;
-            this.barraDeEstadoToolStripMenuItem.CheckOnClick = true;
-            this.barraDeEstadoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.barraDeEstadoToolStripMenuItem.Name = "barraDeEstadoToolStripMenuItem";
-            this.barraDeEstadoToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.barraDeEstadoToolStripMenuItem.Text = "Barra &de estado";
-            this.barraDeEstadoToolStripMenuItem.Click += new System.EventHandler(this.barraDeEstadoToolStripMenuItem_Click);
+            this.elementosToolStripMenuItem.Checked = true;
+            this.elementosToolStripMenuItem.CheckOnClick = true;
+            this.elementosToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.elementosToolStripMenuItem.Name = "elementosToolStripMenuItem";
+            this.elementosToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.elementosToolStripMenuItem.Text = "&Elementos";
+            this.elementosToolStripMenuItem.Click += new System.EventHandler(this.elementosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -488,6 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barraDeEstadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementosToolStripMenuItem;
     }
 }
 

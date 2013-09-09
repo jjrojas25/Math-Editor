@@ -7,3 +7,4 @@ C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\
 C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.frmPrincipal.resources
 C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.Properties.Resources.resources
 C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.AboutBox1.resources
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.FrmTools.resources
