@@ -1,0 +1,9 @@
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\bin\Debug\Math Editor.exe
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\bin\Debug\Math Editor.pdb
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\Math Editor.csproj.GenerateResource.Cache
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\Math Editor.exe
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\Math Editor.pdb
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.frmPrincipal.resources
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.Properties.Resources.resources
+C:\Users\Jota\Documents\Visual Studio 2008\Projects\Math Editor\Math Editor\obj\Debug\MathEditor.AboutBox1.resources
